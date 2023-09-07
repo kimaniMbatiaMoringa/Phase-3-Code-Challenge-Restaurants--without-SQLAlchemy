@@ -8,6 +8,7 @@ class Customer:
         self.name =name
         self.family_name = family_name
         self.instances.append(self)
+        self.review_count=[]
 
     def given_name(self):
         return self.name
@@ -26,9 +27,16 @@ class Customer:
             print(item.name)
 
     def add_review(self,restaurant, rating):
-         review = Review(self.name,restaurant,rating)
+         review = Review(self,restaurant,rating)
          restaurant.add_customer(self.full_name())
-         return review.customer()       
+         self.review_count.append(1)
+         return review.customer()
+
+    def num_reviews(self):
+        print(len(self.review_count))
+
+    def restaurants(self):
+        return         
     
 """     def all(of_class):
         _instances = []

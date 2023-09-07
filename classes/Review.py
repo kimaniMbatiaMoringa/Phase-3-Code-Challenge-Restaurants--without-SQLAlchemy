@@ -5,7 +5,7 @@ class Review:
         self.rating = restaurant_inp.set_rating(rating)
 
     def customer(self):
-        return self.customer_obj
+        return self.customer_obj.name
     
     def restaurant(self):
         return self.restaurant_obj
